@@ -1,0 +1,17 @@
+def largest_odd_times(L):
+    """ Assumes L is a non-empty list of ints
+        Returns the largest element of L that occurs an odd number 
+        of times in L. If no such element exists, returns None """
+    L.sort(reverse=True)
+    count=0
+    for i in L:
+        if L[0]==i:
+            count+=1
+    if count%2==0:
+        del L[0:count]
+        if L==[]:
+            print ('None')
+        else:
+            return (largest_odd_times(L))
+    else:
+        return L[0]
